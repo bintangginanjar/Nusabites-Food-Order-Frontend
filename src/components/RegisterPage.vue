@@ -8,17 +8,16 @@ import NavbarPage from './NavbarPage.vue';
         <div class="bg-white shadow-lg rounded-lg p-6 w-96">        
             <h2 class="text-2xl font-semibold text-center mb-6">Register</h2>
 
-            <input v-model="email" type="email" placeholder="Email"
-                class="w-full border rounded-lg p-2 mb-4" />
+            <input v-model="email" type="email" placeholder="Email" class="w-full border rounded-lg p-2 mb-4" />
 
-            <input v-model="password" type="password" placeholder="Password"
-                class="w-full border rounded-lg p-2 mb-4" />
+            <input v-model="password" type="password" placeholder="Password" class="w-full border rounded-lg p-2 mb-4" />
 
-            <button @click="register"
-                class="w-full bg-red-500 text-white p-2 rounded-lg font-semibold">Register</button>
+            <input v-model="confirmPassword" type="confirmPassword" placeholder="Confirmed Password" class="w-full border rounded-lg p-2 mb-4" />
+
+            <button @click="register" class="w-full bg-greeny text-white p-2 rounded-lg font-semibold">Register</button>
 
             <p class="text-center text-sm mt-3">
-                Already have an account? <router-link to="/login" class="text-red-500 font-semibold">Log In</router-link>
+                Already have an account? <router-link to="/login" class="text-greeny font-semibold">Log In</router-link>
             </p>
 
             <!--

@@ -13,7 +13,7 @@ import NavbarPage from './NavbarPage.vue';
 
         <input v-model="password" type="password" placeholder="Password" class="w-full border rounded-lg p-2 mb-4" />
 
-        <button @click="login" class="w-full bg-red-500 text-white p-2 rounded-lg font-semibold">Sign In</button>
+        <button @click="login" class="w-full bg-greeny text-white p-2 rounded-lg font-semibold">Log In</button>
 
         <p class="text-center text-sm mt-3">
             Need an account? <router-link to="/register" class="text-red-500 font-semibold">Register</router-link>
