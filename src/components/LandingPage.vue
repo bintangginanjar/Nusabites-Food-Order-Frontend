@@ -8,9 +8,9 @@
                 <h1 class="text-3xl font-bold text-gray-800">Best food waiting for your belly</h1>
                 
                 <!-- Search Bar -->
-                <div class="mt-6 flex items-center bg-white shadow-lg rounded-full overflow-hidden w-1/2">
+                <div class="mt-6 flex items-center bg-white shadow-lg rounded-full overflow-hidden w-1/2 sm:w-1/2">
                     <input type="text" placeholder="Search here ......" class="w-full p-3 focus:outline-none">
-                    <button class="bg-red-500 text-white px-6 py-3 rounded-full">Search</button>
+                    <button class="bg-greeny text-white px-6 py-3 rounded-full hover:opacity-80">Search</button>
                 </div>
                 <!--
                 <img src="https://ik.imagekit.io/69plbkujo/pngtree-hand-drawn-winter-food-delicious-casserole-drawn-foodcartoon-foodwinter-png-image_671394-removebg-preview.png?updatedAt=1741924385948" class="absolute top-10 left-10" alt="Food 1">

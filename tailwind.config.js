@@ -15,7 +15,8 @@ export default {
         secondary: '#64748b',
         dark: '#0f172a',
         creamy: '#fef7e4',
-        pinky: '#fee2e2'
+        pinky: '#fee2e2',
+        greeny: '#7da640'
       },
       screens: {
         '2xl': '1320px'

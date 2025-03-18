@@ -1,8 +1,18 @@
 <script setup>
-import { onBeforeMount, onMounted, ref } from 'vue';
+import { onBeforeMount, onMounted, ref, } from 'vue';
+import { useRouter } from 'vue-router';
 
 const isActive = ref(false);
 const isHidden = ref(true);
+const router = useRouter();
+
+function goToLogin() {
+    router.push("/login");
+}
+
+function goToRegister() {
+    router.push("/register");
+}
 
 function toggleHamburger() {
     //console.log(`isActive : `, isActive.value)
@@ -30,7 +40,36 @@ onBeforeMount(() => {
 
 </script>
 
-<template>
+<template>    
+    <header class="bg-creamy w-full">        
+        <nav class="bg-transparent shadow-md p-2 flex justify-between items-center">
+            <div class="flex items-center relative">
+                <a href="/" class="font-bold text-dark block px-4 py-4">Nusa Bites</a>
+            </div>
+            <div class="flex items-center px-8 gap-4">
+                <button @click="goToLogin" class="bg-transparent text-dark rounded-full w-full py-2 px-4 hover:scale-105 transition duration-300">
+                    Log In
+                </button>
+                <button @click="goToRegister" class="bg-greeny text-primary rounded-full w-full py-2 px-4 hover:text-dark hover:scale-105 transition duration-300">
+                    Register
+                </button>
+            </div>
+        </nav>        
+    </header>
+    
+    <!--
+    <header class="bg-creamy fixed top-0 left-0 w-full flex items-center z-10">
+        <div class="container">
+            <div class="flex items-center justify-between relative">
+                <div class="px-4">
+                    <a href="" class="font-bold text-lg text-dark block py-6">Nusa Bites</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    -->
+
+    <!--
     <header class="bg-creamy fixed top-0 left-0 w-full flex items-center z-10">
         <div class="container">
             <div class="flex items-center justify-between relative">
@@ -60,15 +99,17 @@ onBeforeMount(() => {
             </div>
         </div>
     </header>
+    -->
 </template>
 
 <style scoped>
+
 .navbar-fixed {
     @apply fixed z-[9999] bg-creamy bg-opacity-80;
     backdrop-filter: blur(5px);
     box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.2);
 }
-
+/*
 .hamburger-line {
     @apply w-[30px] h-[2px] my-2 block bg-dark
 }
@@ -84,4 +125,5 @@ onBeforeMount(() => {
 .hamburger-active > span:nth-child(2) {
     @apply scale-0;
 }
+*/
 </style>
