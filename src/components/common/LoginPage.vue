@@ -1,5 +1,37 @@
 <script setup>
+import { ref } from "vue"
 import NavbarPage from './NavbarPage.vue';
+import axios from 'axios';
+import { useRouter } from 'vue-router';
+
+const API_URL = "http://localhost:8080";
+const loginEndpoint = "/api/auth/login";
+
+const email = ref("");
+const password = ref("");
+const router = useRouter();
+
+async function handleLogin() {
+    try {
+        const response = await axios.post(API_URL + loginEndpoint, {
+            email: email.value,
+            password: password.value
+        });
+        
+        const userData = response.data.data;
+        localStorage.setItem("token", userData.token);
+
+        if (userData.roles[0] === "ROLE_ADMIN") {
+            router.push("/admin")
+        } else {
+            router.push("/")
+        }
+        
+    } catch (error) {
+        console.error("Login failed:", error.response?.data || error.message);
+        alert("Invalid email or password");
+    }
+}
 
 </script>
 <template>
@@ -13,7 +45,7 @@ import NavbarPage from './NavbarPage.vue';
 
         <input v-model="password" type="password" placeholder="Password" class="w-full border rounded-lg p-2 mb-4" />
 
-        <button @click="login" class="w-full bg-greeny text-white p-2 rounded-lg font-semibold">Log In</button>
+        <button @click="handleLogin" class="w-full bg-greeny text-white p-2 rounded-lg font-semibold">Log In</button>
 
         <p class="text-center text-sm mt-3">
             Need an account? <router-link to="/register" class="text-red-500 font-semibold">Register</router-link>

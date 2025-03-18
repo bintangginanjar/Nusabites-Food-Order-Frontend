@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
 import axios from 'axios';
 
 const API_URL = "http://localhost:8080";
@@ -81,7 +81,7 @@ onMounted(async () => {
         <section class="pt-2">
         <div class="container">
             <div class="flex justify-center space-x-8 p-6 bg-white">
-                <button v-for="category in categories" :key="category.id" @click="changeCategory(category.name)" class="bg-greeny text-white px-6 py-2 rounded-full" :class="selectedCategory === category.name ? 'bg-greeny text-white' : 'bg-green-200 text-green-800'">{{ category.name }}</button>                
+                <button v-for="category in categories" :key="category.id" @click="changeCategory(category.name)" class="px-6 py-2 rounded-full" :class="selectedCategory === category.name ? 'bg-greeny text-white' : 'bg-green-200 text-green-800'">{{ category.name }}</button>                
             </div>
 
         <!-- Food Menu -->
